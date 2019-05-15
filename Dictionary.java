@@ -51,11 +51,11 @@ public class Dictionary {
 			}
 			if (keepWord) {
 				wordsToKeep.add(word);
-				System.out.println(word);
+//				System.out.println(word);
 			}
 		}
 		dictionary = wordsToKeep;
-		System.out.println("Word count: " + dictionary.size());
+//		System.out.println("Word count: " + dictionary.size());
 	}
 
 	void filterAll(int numChars, String alphaChars) {
@@ -63,10 +63,10 @@ public class Dictionary {
 		filterByAlphaChars(alphaChars);
 	}
 
-	public ArrayList<String> getWordsByLetter(char letter) {
+	public ArrayList<String> getWordsByPrefix(String prefix) {
 		ArrayList<String> wordsToKeep = new ArrayList<>();
 		for (String word : dictionary) {
-			if (word.charAt(0) == letter) {
+			if (word.startsWith(prefix)) {
 				wordsToKeep.add(word);
 			}
 		}
